@@ -1,0 +1,104 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+    <button  class="navbar-toggler ml-auto mb-2 bg-light" type="button" type="button" (click)="navCollapse=!navCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbar" #collapse="ngbCollapse" [(ngbCollapse)]="navCollapse" >
+      <div class="container-fluid">
+        <div class="row">
+          <!-- sidebar -->
+          <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top" [(ngbCollapse)]="sidenavCollapse">
+            <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">CodeAndCreate</a>
+            <div class="bottom-border pb-3">
+              <img src="" width="50" class="rounded-circle mr-3">
+              <a href="#" class="text-white">Helen Smith</a>
+            </div>
+            <ul class="navbar-nav flex-column mt-4">
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2" >
+                    <fa-icon [icon]="Icon.dashBoard" class="me-2"></fa-icon>DashBoard
+                </a>
+              </li>
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2" routerLink="/students" routerLinkActive="current">
+                    <fa-icon [icon]="Icon.draw" class="me-2" ></fa-icon>Students
+                    <!-- Icon.draw jo h wo sidenav.ts file m variable se aaraha h  -->
+                </a>
+              </li>
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2"routerLink="/teachers" routerLinkActive="current" >
+                    <fa-icon [icon]="Icon.Teacher" class="me-2" ></fa-icon>Teacher
+                </a>
+              </li>
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2" >
+                    <fa-icon [icon]="Icon.Standards" class="me-2"></fa-icon>Standards
+                </a>
+              </li>
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2"  routerLink="/blogform" routerLinkActive="current">
+                    <fa-icon [icon]="Icon.Books" class="me-2"></fa-icon>Subjects
+                </a>
+              </li>
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2" routerLink="/profilepage" routerLinkActive="current">
+                    <fa-icon [icon]="Icon.Books" class="me-2"></fa-icon>Profile
+                </a>
+              </li>
+              <li class="nav-item"  >
+                <a  class="nav-link text-white p-3 mb-2" routerLink="/medium" routerLinkActive="current" (click)="sidenavCollapse=!sidenavCollapse">
+                    <fa-icon [icon]="Icon.Books" class="me-2"></fa-icon>ViewBlogs
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- end of sidebar -->
+
+          <!-- top-nav -->
+          
+          <div class="col-md-12  ml-auto bg-dark fixed-top py-2 top-navbar">
+            <div class="row align-items-center">
+                <div class="col-md-1">
+                    <button  class=" ml-auto mb-2 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" type="button" (click)="sidenavCollapse=!sidenavCollapse"  >
+                        <span class="navbar-toggler-icon" [hidden]="!sidenavCollapse"></span>
+                        <span [hidden]="sidenavCollapse">X</span>
+                      </button>
+                </div>
+              <div class="col-md-2">
+                <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+              </div>
+              <div class="col-md-3">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Search...">
+                    <button type="button" class="btn btn-white search-button">
+                      <fa-icon [icon]="Icon.searchIcon"></fa-icon>
+                      </button>
+
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-3">
+                <ul class="navbar-nav">
+                  <li class="nav-item icon-parent">
+                    <a href="#" class="nav-link icon-bullet">
+                        <fa-icon [icon]="Icon.Comment" class="text-white"></fa-icon>
+                    
+                  </a></li>
+                  <li class="nav-item icon-parent">
+                    <a href="#" class="nav-link icon-bullet">
+                        <fa-icon [icon]="Icon.Bell" class="text-white"></fa-icon>
+                    </a></li>
+                  <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-out">
+                  </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end of top-nav -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- end of navbar -->
+
